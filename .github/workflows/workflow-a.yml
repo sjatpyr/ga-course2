@@ -1,9 +1,10 @@
-name: Simple Manual Workflow - Three Env
+name: Workflow-A
 
 on:
   workflow_dispatch:
 
 jobs:
+  
   DEV:
     runs-on: ubuntu-latest
     environment: DEV
@@ -20,13 +21,3 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello from QA environment!
-
-    
-  PROD:
-    runs-on: ubuntu-latest
-    environment: PROD
-    needs: QA
-
-    steps:
-      - name: Run a one-line script
-        run: echo Hello from PROD environment!
