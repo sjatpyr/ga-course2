@@ -40,3 +40,22 @@ jobs:
           echo "The URL for this GitHub Actions run is: $RUN_URL" 
           echo "## GitHub Actions Run URL" >> $GITHUB_STEP_SUMMARY 
           echo "$RUN_URL" >> $GITHUB_STEP_SUMMARY
+    
+      - name: Set deployment URL
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const runUrl = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const deploymentId = '${{ github.event.deployment.id }}';
+
+            await github.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deploymentId,
+              state: 'success', // or other appropriate state (e.g., 'in_progress', 'failure')
+              environment: 'production', // matches your environment name
+              log_url: runUrl, // Add the URL for the GitHub Actions run
+              description: 'Deployment complete. Click here for more details.',
+              environment_url: runUrl, // This is where you link the deployment to the GitHub Actions run
+            });
