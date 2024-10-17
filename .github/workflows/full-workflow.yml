@@ -8,6 +8,7 @@ jobs:
   DEV:
     runs-on: ubuntu-latest
     environment: DEV
+    concurrency: DEV
 
     steps:
       - name: Run a one-line script
@@ -16,6 +17,7 @@ jobs:
   QA:
     runs-on: ubuntu-latest
     environment: QA
+    concurrency: QA
     needs: DEV
 
     steps:
@@ -25,6 +27,8 @@ jobs:
   PROD:
     runs-on: ubuntu-latest
     environment: PROD
+    concurrency: PROD
+    needs: QA
 
     steps:
       - name: Run a one-line script
