@@ -1,4 +1,4 @@
-name: Prod Release
+name: PROD Release
 
 on:
   push:

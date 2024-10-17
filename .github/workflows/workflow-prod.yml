@@ -1,4 +1,4 @@
-name: Prod Workflows
+name: PROD Workflow
 
 on:
   workflow_run:
