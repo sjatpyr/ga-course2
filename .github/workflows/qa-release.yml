@@ -1,0 +1,17 @@
+name: QA Release
+
+on:
+  push:
+    tags:
+      - v*
+  
+
+jobs:
+
+  QA:
+    runs-on: ubuntu-latest
+    environment: QA
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from QA environment!

@@ -1,4 +1,4 @@
-name: Worfklow-B
+name: Prod Workflows
 
 on:
   workflow_run:
