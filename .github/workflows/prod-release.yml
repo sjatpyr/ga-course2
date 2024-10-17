@@ -1,0 +1,17 @@
+name: Prod Release
+
+on:
+  push:
+    tags:
+      - v*
+  
+
+jobs:
+
+  QA:
+    runs-on: ubuntu-latest
+    environment: Prod
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from QA environment!
