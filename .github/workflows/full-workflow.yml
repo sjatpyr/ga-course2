@@ -1,0 +1,31 @@
+name: Release Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  
+  DEV:
+    runs-on: ubuntu-latest
+    environment: DEV
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from DEV environment!
+
+  QA:
+    runs-on: ubuntu-latest
+    environment: QA
+    needs: DEV
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from QA environment!
+
+  PROD:
+    runs-on: ubuntu-latest
+    environment: PROD
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from PROD environment!
