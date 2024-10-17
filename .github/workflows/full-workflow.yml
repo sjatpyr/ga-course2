@@ -40,5 +40,4 @@ jobs:
           echo "The URL for this GitHub Actions run is: $RUN_URL" 
           echo "## GitHub Actions Run URL" >> $GITHUB_STEP_SUMMARY 
           echo "$RUN_URL" >> $GITHUB_STEP_SUMMARY
-          echo "$RUN_URL" >> $GITHUB_OUTPUT
   
