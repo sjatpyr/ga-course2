@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo Hello from DEV environment!
+        run: |
+          echo Hello from DEV environment!
+          echo ${{ github.event.head_commit.message }}
 
   QA:
     runs-on: ubuntu-latest
@@ -23,4 +25,6 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo Hello from QA environment!
+        run: |
+          echo Hello from QA environment!
+          echo ${{ github.event.head_commit.message }}
