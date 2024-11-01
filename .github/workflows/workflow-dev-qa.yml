@@ -24,7 +24,6 @@ jobs:
           echo test_var = ${{ vars.TEST_VAR }}
       - name: Put current date into a variable
         run: |
-          echo & Get-Date -format yyyy-MM-dd
           $NOW=& Get-Date -format yyyy-MM-dd
           echo "NOW=$NOW" >> $env:GITHUB_ENV
 
