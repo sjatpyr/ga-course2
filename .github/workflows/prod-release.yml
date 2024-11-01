@@ -50,4 +50,4 @@ jobs:
               --repo="$GITHUB_REPOSITORY" \
               --title="${tag}" \
               --generate-notes \
-              --notes "### $subtitle\n\n## What's Changed\n\n$changes"
+              --notes "## Release date: $(date +'%Y-%m-%d %H:%M:%S')"
