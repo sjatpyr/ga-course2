@@ -15,4 +15,3 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello from DEV environment!
-  
