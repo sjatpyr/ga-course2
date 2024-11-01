@@ -10,8 +10,16 @@ jobs:
 
   QA:
     runs-on: ubuntu-latest
-    environment: PROD
+    environment: QA
 
     steps:
       - name: Run a one-line script
         run: echo Hello from QA environment!
+
+  PROD:
+    runs-on: ubuntu-latest
+    environment: PROD
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello from PROD environment!
