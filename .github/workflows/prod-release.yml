@@ -16,7 +16,11 @@ jobs:
       - name: Run a one-line script
         run: |
           echo Hello from QA environment!
-          echo ${{ github.head_ref }}.${{ github.sha }}
+          echo run_id = ${{ github.run_id }}
+          echo sha = ${{ github.sha }}
+          echo ref = ${{ github.ref }}
+          echo head_ref = ${{ github.head_ref }}
+          echo environment = ${{ github.event.deployment.environment }}"
 
   PROD:
     runs-on: ubuntu-latest
