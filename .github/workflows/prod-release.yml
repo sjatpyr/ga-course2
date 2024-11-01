@@ -39,3 +39,14 @@ jobs:
           echo event_name = ${{ github.event_name }}
           echo default_branch = ${{ github.event.repository.default_branch }}
           echo test_var = ${{ vars.TEST_VAR }}
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+            --title "$REPO_NAME $TAG_NAME" \
+            --generate-notes \
+            --notes-starts-with "## What's Changed" \
+            --target "$(git rev-parse HEAD)" \
+            --repo "$REPO_NAME"
