@@ -46,5 +46,6 @@ jobs:
         run: |
           gh release create "$tag" \
               --repo="$GITHUB_REPOSITORY" \
-              --title="${GITHUB_REPOSITORY#*/}-${tag}" \
+              --title="${tag}" \
               --generate-notes
+              --notes "### $subtitle\n\n## What's Changed\n$(gh release view "$tag" --json body -q .body)"
