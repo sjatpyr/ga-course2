@@ -47,5 +47,5 @@ jobs:
           gh release create "$tag" \
               --repo="$GITHUB_REPOSITORY" \
               --title="${tag}" \
-              --generate-notes
+              --generate-notes \
               --notes "## What's Changed"
