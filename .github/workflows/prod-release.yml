@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - v*
+  workflow_dispatch:
   
 
 jobs:
@@ -25,6 +26,7 @@ jobs:
   PROD:
     runs-on: ubuntu-latest
     environment: PROD
+    needs: QA
 
     steps:
       - name: Run a one-line script
