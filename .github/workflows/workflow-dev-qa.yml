@@ -16,7 +16,7 @@ jobs:
       - name: Run a one-line script
         run: |
           echo Hello from DEV environment!
-          echo ${{ github.event.head_commit.message }}
+          echo ${{ github.head_ref }}.${{ github.sha }}
 
   QA:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
       - name: Run a one-line script
         run: |
           echo Hello from QA environment!
-          echo ${{ github.event.head_commit.message }}
+          echo ${{ github.head_ref }}.${{ github.sha }}
