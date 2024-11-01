@@ -48,4 +48,4 @@ jobs:
               --repo="$GITHUB_REPOSITORY" \
               --title="${tag}" \
               --generate-notes
-              --notes "### $subtitle\n\n## What's Changed\n$(gh release view "$tag" --json body -q .body)"
+              --notes "## What's Changed"
