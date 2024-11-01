@@ -29,11 +29,11 @@ jobs:
 
     steps:
       - name: Run a one-line script
-      run: |
-        echo Hello from QA environment!
-        echo run_id = ${{ github.run_id }}
-        echo sha = ${{ github.sha }}
-        echo ref = ${{ github.ref }}
-        echo event_name = ${{ github.event_name }}
-        echo default_branch = ${{ github.event.repository.default_branch }}
+        run: |
+          echo Hello from QA environment!
+          echo run_id = ${{ github.run_id }}
+          echo sha = ${{ github.sha }}
+          echo ref = ${{ github.ref }}
+          echo event_name = ${{ github.event_name }}
+          echo default_branch = ${{ github.event.repository.default_branch }}
 
