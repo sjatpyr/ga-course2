@@ -45,8 +45,6 @@ jobs:
           tag: ${{ github.ref_name }}
         run: |
           gh release create "$tag" \
-            --title "$REPO_NAME $TAG_NAME" \
-            --generate-notes \
-            --notes-starts-with "## What's Changed" \
-            --target "$(git rev-parse HEAD)" \
-            --repo "$REPO_NAME"
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/}-${tag}" \
+              --generate-notes
