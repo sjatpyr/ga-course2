@@ -19,16 +19,16 @@ jobs:
           echo run_id = ${{ github.run_id }}
           echo sha = ${{ github.sha }}
           echo ref = ${{ github.ref }}
-          echo head_ref = ${{ github.head_ref }}
-          echo environment = ${{ github.event.deployment.environment }}"
+          echo event_name = ${{ github.event_name }}
+          echo default_branch = ${{ github.event.repository.default_branch }}
 
-  QA:
-    runs-on: ubuntu-latest
-    environment: QA
-    needs: DEV
+  # QA:
+  #   runs-on: ubuntu-latest
+  #   environment: QA
+  #   needs: DEV
 
-    steps:
-      - name: Run a one-line script
-        run: |
-          echo Hello from QA environment!
-          echo ${{ github.head_ref }}.${{ github.sha }}
+  #   steps:
+  #     - name: Run a one-line script
+  #       run: |
+  #         echo Hello from QA environment!
+  #         echo ${{ github.head_ref }}.${{ github.sha }}
