@@ -22,10 +22,11 @@ jobs:
           echo event_name = ${{ github.event_name }}
           echo default_branch = ${{ github.event.repository.default_branch }}
           echo test_var = ${{ vars.TEST_VAR }}
-      - name: Put current date into a variable
+      - name: Generate Current Date
         run: |
-          $NOW=& Get-Date -format yyyy-MM-dd
-          echo "NOW=$NOW" >> $env:GITHUB_ENV
+          DATE=$(date +"%Y-%m-%d")
+          echo "Today's date is $DATE"
+          echo "DATE=$DATE" >> $GITHUB_ENV
 
   # QA:
   #   runs-on: ubuntu-latest
