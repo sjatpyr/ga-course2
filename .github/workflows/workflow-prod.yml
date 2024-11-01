@@ -2,7 +2,7 @@ name: PROD Workflow
 
 on:
   workflow_run:
-    workflows: ["workflow-a"]
+    workflows: ["DEV and QA Workflows"]
     types:
       - completed
 

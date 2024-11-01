@@ -10,7 +10,7 @@ jobs:
 
   QA:
     runs-on: ubuntu-latest
-    environment: Prod
+    environment: PROD
 
     steps:
       - name: Run a one-line script
